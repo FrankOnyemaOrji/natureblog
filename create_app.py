@@ -10,13 +10,13 @@ from flask_migrate import Migrate
 load_dotenv()
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
-# uri = os.environ.get('DATABASE_URL')
-# if uri.startswith('postgres://'):
-#     uri = uri.replace('postgres://', 'postgresql://', 1)
+uri = os.environ.get('DATABASE_URL')
+if uri.startswith('postgres://'):
+    uri = uri.replace('postgres://', 'postgresql://', 1)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(base_dir, 'natureblog.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy()
