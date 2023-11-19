@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="/static/createpost.css">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="main-wrapper-clearfix">
+        <header>
+            <nav>
+                <div class="nav_logo">NatureBlog</div>
+                {% if current_user.is_authenticated %}
+                    <ul class="nav_links">
+                        <li class="link"><a href="{{ url_for('views.index') }}">Home</a></li>
+                        <li class="link"><a href="{{ url_for('views.about') }}">About</a></li>
+                        <li class="link"><a href="{{ url_for('views.contact') }}">Support</a></li>
+                        <li class="link"><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="nav_links">
+                        <li class="link"><a href="{{ url_for('views.index') }}">Home</a></li>
+                        <li class="link"><a href="{{ url_for('views.about') }}">About</a></li>
+                        <li class="link"><a href="{{ url_for('views.contact') }}">Support</a></li>
+                        <li class="link"><a href="{{ url_for('auth.login') }}">Login</a></li>
+                        <li class="link"><a href="{{ url_for('auth.register') }}">Register</a></li>
+                    </ul>
+                {% endif %}
+            </nav>
+        </header>
+        <div class="container">
+            <form class="post-form" method="POST">
+                <p class="create">Create Post</p>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required></textarea>
+                <button class="submit">Create Post</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

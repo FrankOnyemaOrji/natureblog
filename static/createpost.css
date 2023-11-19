@@ -1,0 +1,121 @@
+/* createpost.css */
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 50px auto 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.post-form input[type="text"],
+.post-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.post-form input[type="email"],
+.post-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.post-form button[type="submit"] {
+
+}
+
+.submit:hover {
+    background-color: rgb(134, 32, 32);
+}
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: #010058;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    /*transform: .3s ease;*/
+}
+
+.create {
+    font-size: 28px;
+    color: #830f0f;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.create::before, .create::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #010058;
+}
+
+.create::before {
+    width: 18px;
+    height: 18px;
+    background-color: #010058;
+}
+
+.create::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+h3 {
+    font-size: 15px;
+    color: #830f0f;
+    margin-top: 1rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,9 @@
+.ideas
+venv/
+.idea/
+.env
+natureblog.db
+*py[cod]
+models/__pycache__/
+migrations/__pycache__/
+natureblog/__pycache__/

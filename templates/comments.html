@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <link rel="stylesheet" href="/static/createpost.css">
+</head>
+<body>
+<div class="main-content">
+    <div class="blog-post">
+        <h2>{{ post.title }}</h2>
+        <p class="author">Posted by {{ post.user.username }} on {{ post.date }}</p>
+        <p>{{ post.content }}</p>
+        <h2>Comments</h2>
+        {% if comments %}
+            {% for comment in comments %}
+                <h3>{{ comment.user.username }} commented on {{ comment.date }}</h3>
+                <p>{{ comment.comment_content }}</p>
+            {% endfor %}
+        {% else %}
+            <p>There are no comments yet.</p>
+        {% endif %}
+        {% if current_user.username == post.user.username %}
+            <button class="delete-button"><i class="fas fa-trash"></i><a
+                    href="/deleteComment/{{ post.id }}">Delete</a></button>
+            </div>
+        {% else %}
+            <p>You do not have access to delete this comment</p>
+        {% endif %}
+    <hr>
+    <div class="main-wrapper-clearfix">
+        <div class="container">
+            <form class="post-form" action="/createComment/{{ post.id }}" method="POST">
+                <p class="create">Add a comment</p>
+                <label for="content">Comment:</label>
+                <textarea id="content" name="comment_content" required></textarea>
+                <button class="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nature Blog</title>
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<div class="main-container">
+    <div class="main-wrapper-clearfix">
+        <header>
+            <nav>
+                <div class="nav_logo">NatureBlog</div>
+                {% if current_user.is_authenticated %}
+                    <ul class="nav_links">
+                        <li class="link"><a href="{{ url_for('views.index') }}">Home</a></li>
+                        <li class="link"><a href="{{ url_for('views.contact') }}">Support</a></li>
+                        <li class="link"><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                        <button class="create_post_btn"><a href="{{ url_for('views.createPost') }}">Create Post</a>
+                        </button>
+                    </ul>
+                {% else %}
+                    <ul class="nav_links">
+                        <li class="link"><a href="{{ url_for('views.index') }}">Home</a></li>
+                        <li class="link"><a href="{{ url_for('views.about') }}">About</a></li>
+                        <li class="link"><a href="{{ url_for('views.contact') }}">Support</a></li>
+                        <li class="link"><a href="{{ url_for('auth.login') }}">Login</a></li>
+                        <li class="link"><a href="{{ url_for('auth.register') }}">Register</a></li>
+                    </ul>
+                {% endif %}
+            </nav>
+        </header>
+        <div class="main-content">
+            <div class="blog-post">
+                <h2>About Us</h2>
+                <p class="author"> Founded in 2023 by Frank Onyema Orji</p>
+                <p>
+                    NatureBlog is a nonprofit, volunteer-run site dedicated to raising awareness of important.
+                    NatureBlog was founded in 2023 with the mission of raising awareness of important wildlife and ocean
+                    conservation issues. We are passionate about protecting our Earth's natural environments and the
+                    incredible creatures that call them home. Through engaging blog posts, photography, and video, our
+                    team of writers, naturalists and marine biologists hope to both educate readers and inspire
+                    action.</p>
+                <br>
+                <p>Our founding blogger, Frank Orji, has always had a deep love of nature since his childhood days
+                    exploring the forests near his home. He is studying Software Engineering in college and spent a year
+                    volunteering at an Africa wildlife preserve. It was there that he witnessed firsthand the threats
+                    facing many wild species and habitats. He was struck by how interconnected our world is - how the
+                    decline of one animal could impact entire ecosystems. Frank was also moved by the dedication of
+                    rangers and conservationists working tirelessly to make a difference, often with scarce
+                    resources.</p>
+                <br>
+                <p>When Frank returned home, he wanted to find a way to contribute to conservation efforts from
+                    afar. Combining his writing skills with his passion for the natural world, he launched NatureBlog.
+                    Here Frank shares stories from the field, highlights neglected or imperiled species, and reports
+                    on the cutting-edge research and policies that could reshape our relationship with the planet. He
+                    also profiles inspiring individuals making an impact through their conservation work.</p>
+                <br>
+                <p>NatureBlog also features the work of young emerging voices in conservation. Through our Campus
+                    Correspondents program, we publish articles and reports from college students conducting field
+                    research or environmental advocacy campaigns. We hope to nurture the next generation of conservation
+                    leaders and give them an platform to raise awareness of their important work.</p>
+                <br>
+                <p>As an entirely nonprofit and volunteer-run site, our mission remains to utilize the power of
+                    storytelling and digital media to foster greater understanding and action. All profits from
+                    NatureBlog's sponsors and donors go directly towards supporting frontline environmental groups and
+                    community-based conservation efforts in places like Africa, Southeast Asia and South America. We
+                    also maintain a list of reputable organizations on our site where readers can donate or volunteer
+                    their time if they feel inspired to support a particular cause or region after reading one of our
+                    stories.</p>
+                <br>
+                <p>So whether you are an enthusiast wanting to deepen your knowledge or simply curious about our
+                    fragile planet, we hope you will find something compelling here at NatureBlog. Our goal is to
+                    astonish with imagery of threatened landscapes, educate on pressing issues, and ignite that flame of
+                    care for nature - so together we can work to safeguard Earth's biodiversity for generations to
+                    come.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
