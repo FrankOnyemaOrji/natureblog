@@ -89,7 +89,9 @@ If the Flask application requires a database, make sure to set up the database a
 Some Flask projects may require additional setup steps, such as running database migrations or initializing the database. Refer to the project's documentation or README for specific instructions.
 
 To create a SQLAlchemy database for the project,
-![readme.png](..%2F..%2FOneDrive%2FPictures%2FScreenshots%2Freadme.png)
+
+![readme](https://github.com/FrankOnyemaOrji/natureblog/assets/59745545/95b4c035-a597-48b9-9b40-c63c1a3ba1a5)
+
 replace the database URI in the config.py file with 'sqlite:///site.db' and run the following commands in the terminal:
 
 For Windows:
