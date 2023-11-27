@@ -26,14 +26,16 @@ To run a NatureBlog project locally, you will need to follow these steps:
 1. Clone the Repository
 First, clone the repository containing the NatureBlog project to your local machine. You can do this by running the following command in your terminal:
 
-**Copy**
+Copy
 git clone https://github.com/FrankOnyemaOrji/natureblog.git
 
 2. Set Up a Virtual Environment
 It is recommended to use a virtual environment to isolate the project's dependencies. Navigate to the project directory in your terminal and create a new virtual environment by running the following command:
 
-**Copy**
+Copy
 $ python3 -m venv .venv on macOS and Linux
+
+Copy
 $ py -m venv .venv on Windows
 This will create a new directory named venv that will contain the virtual environment.
 
